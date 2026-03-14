@@ -5,39 +5,41 @@
     <title>Garage Ô tô Thanh Vinh</title>
     <style>
         body { font-family: sans-serif; margin: 0; padding: 0; background: #fff; }
+        
+        /* Menu */
         nav { background: #d32f2f; padding: 15px; text-align: center; }
         nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
         
-        /* Cấu trúc chính */
+        /* Wrapper chính */
         .main-wrapper { 
             display: flex; 
+            flex-direction: column; /* Chuyển sang cột để logo hiển thị full 1200px */
             align-items: center; 
-            justify-content: center; /* Đẩy các phần tử vào giữa */
-            gap: 50px; /* Khoảng cách giữa cột trái và phải */
-            padding: 40px 20px; 
+            padding: 20px; 
             max-width: 1200px; 
             margin: auto; 
         }
         
-        .left-side { flex: 1; text-align: left; }
+        /* Logo: Tăng tối đa 1200px */
+        .logo-img { width: 100%; max-width: 1200px; display: block; margin-bottom: 0; }
         
-        /* Logo */
-        .logo-img { width: 100%; max-width: 800px; display: block; }
-        
-        /* Địa chỉ kéo sát vào logo */
-        .address { 
-            font-size: 20px; font-weight: bold; color: #333; 
-            margin-top: -80px; /* Điều chỉnh khoảng cách lên sát logo */
-            margin-bottom: 20px; 
+        /* Thông tin kéo sát vào logo */
+        .info-container { 
+            text-align: left; 
+            width: 100%; 
+            max-width: 1200px; 
+            margin-top: -80px; /* Đẩy sát lên logo */
+            z-index: 1;
         }
         
+        .address { font-size: 20px; font-weight: bold; color: #333; margin-bottom: 10px; }
         .hotline-box { 
             background: #ffc107; display: inline-block; padding: 15px 30px; 
             font-size: 26px; font-weight: bold; border-radius: 10px; color: #000;
         }
         
-        /* Đẩy xe sang trái bằng cách giảm flex và căn lề */
-        .right-side { flex: 0.8; text-align: left; }
+        /* Vùng hiển thị xe bên dưới hoặc cạnh */
+        .content-bottom { display: flex; align-items: center; justify-content: flex-start; width: 100%; max-width: 1200px; margin-top: 20px; }
         .car-img { width: 100%; max-width: 500px; height: auto; }
         
         footer { text-align: center; padding: 30px; background: #f4f4f4; color: #666; }
@@ -54,13 +56,14 @@
 </nav>
 
 <div class="main-wrapper">
-    <div class="left-side">
-        <img src="logo.png" alt="Logo" class="logo-img">
+    <img src="logo.png" alt="Logo" class="logo-img">
+    
+    <div class="info-container">
         <div class="address">Địa chỉ: 26/3B Ấp Chánh 2, Tân Xuân, Hóc Môn, TP.HCM</div>
         <div class="hotline-box">Hotline: 0903.340.330 - Mr. Vinh</div>
     </div>
     
-    <div class="right-side">
+    <div class="content-bottom">
         <img src="car1.png" alt="Xe hơi" class="car-img">
     </div>
 </div>
