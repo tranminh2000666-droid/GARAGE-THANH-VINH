@@ -5,30 +5,27 @@
     <title>Garage Ô tô Thanh Vinh</title>
     <style>
         body { font-family: sans-serif; margin: 0; padding: 0; background: #fff; }
-        
-        /* Menu */
         nav { background: #d32f2f; padding: 15px; text-align: center; }
         nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
         
-        /* Wrapper chính */
+        /* Sử dụng Grid để ép cột Logo và Xe nằm cạnh nhau */
         .main-wrapper { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
+            display: grid;
+            grid-template-columns: 1fr auto; /* Cột trái linh hoạt, cột phải (xe) tự điều chỉnh */
+            align-items: center;
+            gap: 20px; 
             padding: 20px; 
             max-width: 1200px; 
             margin: auto; 
         }
         
-        /* Logo: Thiết lập 1000px như yêu cầu */
-        .logo-img { width: 100%; max-width: 1000px; display: block; margin-bottom: 0; }
+        .left-content { width: 100%; }
         
-        /* Info container: Đẩy sát logo bằng margin-top âm */
+        /* Logo 1000px */
+        .logo-img { width: 100%; max-width: 1000px; display: block; }
+        
         .info-container { 
-            text-align: left; 
-            width: 100%; 
-            max-width: 1000px; 
-            margin-top: -60px; /* Điều chỉnh khoảng cách này để sát logo hơn */
+            margin-top: -50px; /* Đẩy sát lên */
             z-index: 1;
         }
         
@@ -38,17 +35,10 @@
             font-size: 26px; font-weight: bold; border-radius: 10px; color: #000;
         }
         
-        /* Khu vực chứa xe: Căn trái */
-        .car-container { 
-            width: 100%; 
-            max-width: 1000px; 
-            display: flex; 
-            justify-content: flex-start; /* Đẩy xe về bên trái */
-            margin-top: 20px; 
-        }
-        .car-img { width: 100%; max-width: 500px; height: auto; }
+        /* Xe nằm bên phải */
+        .car-img { max-width: 350px; height: auto; }
         
-        footer { text-align: center; padding: 30px; background: #f4f4f4; color: #666; margin-top: 20px; }
+        footer { text-align: center; padding: 30px; background: #f4f4f4; color: #666; }
     </style>
 </head>
 <body>
@@ -62,14 +52,15 @@
 </nav>
 
 <div class="main-wrapper">
-    <img src="logo.png" alt="Logo" class="logo-img">
-    
-    <div class="info-container">
-        <div class="address">Địa chỉ: 26/3B Ấp Chánh 2, Tân Xuân, Hóc Môn, TP.HCM</div>
-        <div class="hotline-box">Hotline: 0903.340.330 - Mr. Vinh</div>
+    <div class="left-content">
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <div class="info-container">
+            <div class="address">Địa chỉ: 26/3B Ấp Chánh 2, Tân Xuân, Hóc Môn, TP.HCM</div>
+            <div class="hotline-box">Hotline: 0903.340.330 - Mr. Vinh</div>
+        </div>
     </div>
     
-    <div class="car-container">
+    <div class="right-content">
         <img src="car1.png" alt="Xe hơi" class="car-img">
     </div>
 </div>
