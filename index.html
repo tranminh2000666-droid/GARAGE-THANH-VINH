@@ -13,22 +13,22 @@
         /* Wrapper chính */
         .main-wrapper { 
             display: flex; 
-            flex-direction: column; /* Chuyển sang cột để logo hiển thị full 1200px */
+            flex-direction: column; 
             align-items: center; 
             padding: 20px; 
             max-width: 1200px; 
             margin: auto; 
         }
         
-        /* Logo: Tăng tối đa 1200px */
-        .logo-img { width: 100%; max-width: 1200px; display: block; margin-bottom: 0; }
+        /* Logo: Thiết lập 1000px như yêu cầu */
+        .logo-img { width: 100%; max-width: 1000px; display: block; margin-bottom: 0; }
         
-        /* Thông tin kéo sát vào logo */
+        /* Info container: Đẩy sát logo bằng margin-top âm */
         .info-container { 
             text-align: left; 
             width: 100%; 
-            max-width: 1200px; 
-            margin-top: -80px; /* Đẩy sát lên logo */
+            max-width: 1000px; 
+            margin-top: -60px; /* Điều chỉnh khoảng cách này để sát logo hơn */
             z-index: 1;
         }
         
@@ -38,11 +38,17 @@
             font-size: 26px; font-weight: bold; border-radius: 10px; color: #000;
         }
         
-        /* Vùng hiển thị xe bên dưới hoặc cạnh */
-        .content-bottom { display: flex; align-items: center; justify-content: flex-start; width: 100%; max-width: 1200px; margin-top: 20px; }
+        /* Khu vực chứa xe: Căn trái */
+        .car-container { 
+            width: 100%; 
+            max-width: 1000px; 
+            display: flex; 
+            justify-content: flex-start; /* Đẩy xe về bên trái */
+            margin-top: 20px; 
+        }
         .car-img { width: 100%; max-width: 500px; height: auto; }
         
-        footer { text-align: center; padding: 30px; background: #f4f4f4; color: #666; }
+        footer { text-align: center; padding: 30px; background: #f4f4f4; color: #666; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -63,7 +69,7 @@
         <div class="hotline-box">Hotline: 0903.340.330 - Mr. Vinh</div>
     </div>
     
-    <div class="content-bottom">
+    <div class="car-container">
         <img src="car1.png" alt="Xe hơi" class="car-img">
     </div>
 </div>
