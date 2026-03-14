@@ -8,24 +8,25 @@
         nav { background: #d32f2f; padding: 15px; text-align: center; }
         nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
         
-        /* Sử dụng Grid để ép cột Logo và Xe nằm cạnh nhau */
+        /* Căn sát lề bằng cách bỏ padding container và dùng grid */
         .main-wrapper { 
             display: grid;
-            grid-template-columns: 1fr auto; /* Cột trái linh hoạt, cột phải (xe) tự điều chỉnh */
+            grid-template-columns: 1fr 0.5fr; /* Tăng tỷ lệ cho cột trái */
             align-items: center;
-            gap: 20px; 
-            padding: 20px; 
-            max-width: 1200px; 
-            margin: auto; 
+            gap: 10px; 
+            max-width: 1400px; /* Mở rộng tối đa */
+            margin: 0; /* Bỏ margin để sát lề trái */
+            padding-left: 0; 
         }
         
-        .left-content { width: 100%; }
+        .left-content { width: 100%; padding-left: 0; }
         
-        /* Logo 1000px */
-        .logo-img { width: 100%; max-width: 1000px; display: block; }
+        /* Logo 1000px, căn lề trái */
+        .logo-img { width: 100%; max-width: 1000px; display: block; margin-left: 0; }
         
         .info-container { 
-            margin-top: -50px; /* Đẩy sát lên */
+            margin-top: -50px; 
+            margin-left: 0; 
             z-index: 1;
         }
         
@@ -35,10 +36,10 @@
             font-size: 26px; font-weight: bold; border-radius: 10px; color: #000;
         }
         
-        /* Xe nằm bên phải */
-        .car-img { max-width: 350px; height: auto; }
+        /* Xe bự hơn: tăng max-width lên 450px */
+        .car-img { width: 100%; max-width: 450px; height: auto; }
         
-        footer { text-align: center; padding: 30px; background: #f4f4f4; color: #666; }
+        footer { text-align: center; padding: 30px; background: #f4f4f4; color: #666; margin-top: 50px; }
     </style>
 </head>
 <body>
