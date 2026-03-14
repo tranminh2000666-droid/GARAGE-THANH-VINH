@@ -10,28 +10,33 @@
         
         .main-wrapper { 
             display: grid;
-            grid-template-columns: 1fr 0.6fr; /* Cột xe chiếm không gian lớn hơn chút */
-            align-items: center;
-            gap: 20px; 
+            grid-template-columns: 1fr auto; 
+            /* Loại bỏ align-items: center để logo không bị đẩy vào giữa */
+            align-items: start; 
+            gap: 40px; 
             max-width: 1400px; 
             margin: 20px auto;
             padding: 0 20px;
         }
         
-        /* Căn Logo và Địa chỉ thẳng hàng bên trái */
-        .left-content { text-align: left; }
+        /* Ép nội dung bên trái sát lề */
+        .left-content { 
+            text-align: left; 
+            justify-self: start; /* Căn lề trái tuyệt đối */
+        }
         
         .logo-img { 
             width: 100%; 
-            max-width: 800px; /* Điều chỉnh lại vừa phải để không bị vỡ */
+            max-width: 800px; 
             display: block; 
-            margin-bottom: 20px; /* Khoảng cách mặc định, không đẩy âm */
+            margin-left: 0; /* Đảm bảo không có lề trái */
         }
         
         .address { 
             font-size: 20px; 
             font-weight: bold; 
             color: #333; 
+            margin-top: 20px; 
             margin-bottom: 15px; 
         }
         
@@ -45,10 +50,10 @@
             color: #000;
         }
         
-        /* Tăng kích thước xe */
+        /* Xe bự hơn và căn phải */
         .car-img { 
             width: 100%; 
-            max-width: 600px; /* Xe to hơn rõ rệt */
+            max-width: 700px; /* Tăng kích thước xe */
             height: auto; 
         }
         
