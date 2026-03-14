@@ -6,34 +6,32 @@
     <style>
         body { font-family: sans-serif; margin: 0; padding: 0; background: #fff; }
         nav { background: #d32f2f; padding: 15px; text-align: center; }
-        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
         
         .main-wrapper { 
             display: grid;
-            grid-template-columns: 1fr auto; 
-            /* Loại bỏ align-items: center để logo không bị đẩy vào giữa */
-            align-items: start; 
-            gap: 40px; 
+            grid-template-columns: 1fr auto; /* Cột trái linh hoạt, cột phải (xe) cố định */
+            align-items: center;
+            gap: 20px; 
             max-width: 1400px; 
             margin: 20px auto;
             padding: 0 20px;
         }
         
-        /* Ép nội dung bên trái sát lề */
+        /* Đảm bảo khối bên trái sát lề và chữ giữ nguyên kích thước */
         .left-content { 
             text-align: left; 
-            justify-self: start; /* Căn lề trái tuyệt đối */
+            width: 100%; /* Chiếm toàn bộ không gian cột trái */
         }
         
         .logo-img { 
+            display: block;
             width: 100%; 
-            max-width: 800px; 
-            display: block; 
-            margin-left: 0; /* Đảm bảo không có lề trái */
+            max-width: 800px; /* Logo giữ kích thước này */
+            margin-left: 0; 
         }
         
         .address { 
-            font-size: 20px; 
+            font-size: 20px; /* Chữ bình thường */
             font-weight: bold; 
             color: #333; 
             margin-top: 20px; 
@@ -44,30 +42,23 @@
             background: #ffc107; 
             display: inline-block; 
             padding: 15px 30px; 
-            font-size: 26px; 
+            font-size: 26px; /* Chữ bình thường */
             font-weight: bold; 
             border-radius: 10px; 
             color: #000;
         }
         
-        /* Xe bự hơn và căn phải */
         .car-img { 
             width: 100%; 
-            max-width: 700px; /* Tăng kích thước xe */
+            max-width: 700px; /* Kích thước xe như ý bạn */
             height: auto; 
         }
-        
-        footer { text-align: center; padding: 30px; background: #f4f4f4; color: #666; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#">TRANG CHỦ</a>
-    <a href="#">GIỚI THIỆU</a>
-    <a href="#">DỊCH VỤ</a>
-    <a href="#">ALBUM</a>
-    <a href="#">LIÊN HỆ</a>
+    <a href="#">TRANG CHỦ</a> ...
 </nav>
 
 <div class="main-wrapper">
@@ -81,10 +72,6 @@
         <img src="car1.png" alt="Xe hơi" class="car-img">
     </div>
 </div>
-
-<footer>
-    &copy; 2026 Garage Ô tô Thanh Vinh.
-</footer>
 
 </body>
 </html>
